@@ -12,7 +12,7 @@ const Write = () => {
       };
     const write = () => {
         console.log("제목:",title);
-        //console.log("날짜:",)
+        console.log("날짜: ",formattedDate)
         console.log("내용:",content);
         
     };
@@ -22,6 +22,8 @@ const Write = () => {
     const titleChange =(event) =>{
         setTitle(event.target.value);
     };
+    const today = new Date();
+    const formattedDate =`${today.getFullYear()}.${today.getMonth()+1}.${today.getDate()}`
     return (
         <W.Container>
             <W.Box>
@@ -41,7 +43,7 @@ const Write = () => {
                         />
                     </W.Title>
                     <W.ContentBox>
-                        <W.Date>2025.04.04</W.Date>
+                        <W.Date>{formattedDate}</W.Date>
                         <W.Textarea
                             value={content}
                             placeholder="내용 입력"
